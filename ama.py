@@ -447,8 +447,8 @@ class AMAFrame(wx.Frame):
                     hl = np.sqrt( (h_[0]-ph_[0])**2 + (h_[1]-ph_[1])**2 ) # line connecting two head tag positions
                     if hl > (self.tagSz/2): # if movement distance is too small, discard
                         if type(t_[0])==int and type(t_[1])==int and type(pt_[0])==int and type(pt_[1])==int: # all the tail position info available
-                            hla = np.degrees(np.arctan2( (h_[0]-ph_[0]), (h_[1]-ph_[1]) )) # degree of line connecting two head tag positions 
-                            tla = np.degrees(np.arctan2( (t_[0]-pt_[0]), (t_[1]-pt_[1]) )) # degree of line connecting two tail tag positions
+                            hla = np.degrees(np.arctan2( (h_[1]-ph_[1]), (h_[0]-ph_[0]) )) # degree of line connecting two head tag positions 
+                            tla = np.degrees(np.arctan2( (t_[1]-pt_[1]), (t_[0]-pt_[0]) )) # degree of line connecting two tail tag positions
                             angle_diff = calc_angle_diff(hla, tla)
                             if angle_diff < 45: # 45 degrees difference is considered as more or less similar direction to account it as 'walking'
                                 wd_ = hl # walking distance for one frame

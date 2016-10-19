@@ -70,11 +70,9 @@ def chk_msg_q(msg_q):
 def calc_angle_diff(ang1, ang2):
     ''' calculate angle difference between two angles
     calculated from arctan2.
-    0 : (adj=0, oppo=1), 90: (adj=1, oppo=0), 180: (adj=0, oppo=-1)
-    45 : (adj=1, oppo=1), -45: (adj=-1, oppo=1), 135: (adj=1, oppo=-1), -135: (adj=-1, oppo=-1) 
     '''
     angle_diff = 0
-    if (ang1 >= 0 and ang2 >= 0) or (ang1 < 0 and ang2 < 0): angle_diff = abs(abs(ang1)-abs(ang2))
+    if (ang1 >= 0 and ang2 >= 0) or (ang1 < 0 and ang2 < 0): angle_diff = abs(ang1-ang2)
     elif (ang1 >=0 and ang2 < 0) or (ang1 < 0 and ang2 >= 0):
         ad1 = abs(ang1) + abs(ang2)
         ad2 = 180-abs(ang1) + 180-abs(ang2)
